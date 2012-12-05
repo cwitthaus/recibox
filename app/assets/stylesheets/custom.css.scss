@@ -1,5 +1,30 @@
 @import "bootstrap";
 
+/* alright, we're going to try and use a single color scheme for the
+    whole site.
+
+    this one to be exact:
+    http://colorschemedesigner.com/#00427lAtI.7Mn
+
+    fuuuun times
+*/
+
+$primary:           #ED4D4D;
+$primary-dark:      darken($primary,30%);
+$primary-light:     lighten($primary,30%);
+
+$secondaryA:        #EDA84D;
+$secondaryA-dark:   darken($secondaryA,30%);
+$secondaryA-light:  lighten($secondaryA,30%);
+
+$secondaryB:        #386F98;
+$secondaryB-dark:   darken($secondaryB,30%);
+$secondaryB-light:  lighten($secondaryB,30%);
+
+$complement:        #3EBD3E;
+$complement-dark:   darken($complement,30%);
+$complement-light:  lighten($complement,30%);
+
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box; 
@@ -179,4 +204,81 @@ input {
       border-bottom: 1px solid $grayLighter;
     }
   }
+}
+
+/* recipes */
+.recipe {
+  h3 { 
+    text-align: center;
+  }
+  .ingredients {
+    background-color: $secondaryA-light;
+
+    @extend .span2;
+    @extend .offset1;
+  }
+  .steps {
+
+  }
+}
+
+/* Demo Pages */
+
+.colorscheme {
+  .primary {
+    background-color: $primary;
+    .light {
+      background-color: $primary-light;
+      color: $primary-dark;
+    }
+    .dark {
+      background-color: $primary-dark;
+      color: $primary-light
+    }
+  }
+  .secondaryA {
+    background-color: $secondaryA;
+    .light {
+      background-color: $secondaryA-light;
+      color: $secondaryA-dark;
+    }
+    .dark {
+      background-color: $secondaryA-dark;
+      color: $secondaryA-light;
+    }
+  }
+  .secondaryB {
+    background-color: $secondaryB;
+    .light {
+      background-color: $secondaryB-light;
+      color: $secondaryB-dark;
+    }
+    .dark {
+      background-color: $secondaryB-dark;
+      color: $secondaryB-light
+    }
+  }
+  .complementary {
+    background-color: $complement;
+    .light {
+      background-color: $complement-light;
+      color: $complement-dark;
+    }
+    .dark {
+      background-color: $complement-dark;
+      color: $complement-light;
+    }
+  }
+  .span6.light {
+      margin-left: 0;
+      padding: 0;
+  }
+  .span6 {
+    margin-top:20px;
+    height: 50px;
+  }
+  .row-fluid {
+    height:100px;
+  }
+  @extend .center;
 }
