@@ -1,0 +1,10 @@
+Recipe
+- title
+- source
+- ingredients (many)
+- steps (many)
+
+Ingredients
+- name of ingredient
+- measurment
+- replacements (usually null)

@@ -1,0 +1,10 @@
+<% provide(:title, 'All Ingredients') %>
+<h1>All ingredients</h1>
+
+<%= will_paginate %>
+
+<ul class="ingredients">
+	<%= render @ingredients %>
+</ul>
+
+<%= will_paginate %>

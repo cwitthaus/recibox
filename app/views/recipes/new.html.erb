@@ -1,0 +1,37 @@
+<% provide(:title, 'Add Recipe') %>
+<h1>Add Recipe</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @recipe do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :source %>
+      <%= f.text_field :source %>
+      <h3>Steps</h3>
+      <div class="steps">
+        <ol>
+          <%= f.fields_for :steps do |builder| %>
+            <%= render 'step', f: builder %>
+          <% end %>
+        </ol>
+
+        <%= button_to_add_fields "Add Step", f, :steps %>
+      </div>
+      <h3>Ingredients</h3>
+      <div class="ingredients">
+        <ol>
+          <%= f.fields_for :ingredient_list_items do |builder| %>
+            <%= render 'ingredient_list_item', f: builder %>
+          <% end %>
+        </ol>
+
+        <%= button_to_add_fields "Add ingredient", f, :ingredient_list_items %>
+      </div>
+
+      <%= f.submit "Add Recipe", class: "btn btn-large btn-primary right" %>
+    <% end %>
+  </div>
+</div>

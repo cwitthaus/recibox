@@ -1,0 +1,15 @@
+config/*-overrides.yml
+db/*.sqlite3
+vendor/bundler_gems/*
+vendor/ruby
+*.diff
+.DS_Store
+.bundle
+og/*.log
+tmp/
+.sass-cache
+TAGS
+.idea
+.bin
+*.tmproj
+*.swp
