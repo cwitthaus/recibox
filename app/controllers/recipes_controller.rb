@@ -11,7 +11,9 @@ class RecipesController < ApplicationController
 	def create
 		@recipe = Recipe.new(params[:recipe])
 		@recipe.uploaded_user = current_user
-		@recipe.steps.each { |step| step.recipe_id = @recipe}
+		@recipe.steps.each { |step| step.recipe_id = @recipe }
+		@recipe.ingredient_list_items.each { |ingredient_list_item|
+			ingredient_list_item.ingredient_id = 1 }
 		if @recipe.save
 			flash[:success] = "Recipe Created"
 			redirect_to @recipe
@@ -22,7 +24,7 @@ class RecipesController < ApplicationController
 
 	def show
 		@recipe = Recipe.find(params[:id])
-		#@ingredients = @recipe.ingredients
+		@ingredients = @recipe.ingredients
 		@steps = @recipe.steps
 	end
 end

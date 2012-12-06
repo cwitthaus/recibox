@@ -207,6 +207,45 @@ input {
 }
 
 /* recipes */
+ul.recipes {
+  border: 2px solid $secondaryB-dark;
+  border-radius: 10px;
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  li {
+    :hover {
+      background-color: $secondaryB-dark;
+      color: $secondaryB-light;
+    }
+    list-style-type:  none;
+    background-color: $secondaryB-light;
+    color: $secondaryB-dark;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid $secondaryB;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    div {
+      height: 100%;
+      .title {
+        font-size: 3em;
+        padding-left:20px;
+        padding-right:20px;
+      }
+    }
+    .information {
+      span {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+    }
+
+    @include clearfix;
+  }
+}
 .recipe {
   h3 { 
     text-align: center;
