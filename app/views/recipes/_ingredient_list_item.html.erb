@@ -1,14 +1,17 @@
 <div class = "ingredient_list_item">
-</p>
+	</p>
+		<%= button_to_remove_fields "Remove Ingredient", f %>
+
 		<%= f.label :measurement_amount, "Amount" %>
 		<%= f.text_field :measurement_amount %>
 
 		<%= f.label :measurement_unit, "Unit" %>
 		<%= f.text_field :measurement_unit %>
 
-		<%= f.label :ingredient_id, "Ingredient" %>
-		<%= f.text_field :ingredient_id %>
+		<span>Ingredient</span>
+		<%= text_field_tag :ingredient_name %>
 
-		<%= button_to_remove_fields "remove", f %>
+		<%= f.label :details, "Details" %>
+		<%= f.text_field :details %>
 	</p>
 </div>

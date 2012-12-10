@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121129160630) do
+ActiveRecord::Schema.define(:version => 20121210173512) do
 
   create_table "ingredient_list_items", :force => true do |t|
     t.integer "recipe_id"
     t.float   "measurement_amount"
     t.string  "measurement_unit"
     t.integer "ingredient_id"
+    t.string  "details"
   end
 
   add_index "ingredient_list_items", ["recipe_id", "ingredient_id"], :name => "index_ingredient_list_items_on_recipe_id_and_ingredient_id"

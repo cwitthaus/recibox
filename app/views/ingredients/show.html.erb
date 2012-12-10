@@ -1,0 +1,18 @@
+<% provide(:title, @ingredient.name) %>
+<div class="row">
+	<div class="span12 ingredient">
+		<h3>
+			<%= @ingredient.name %>
+		<h3>
+		<% if @ingredient.substitution %>
+			<h4>
+				<%= @ingredient.substitution %>
+			</h4>
+		<% end %>
+		<% if @recipes %>
+			<ul class="recipes">
+				<%= render @recipes %>
+			</ul>
+		<% end %>
+	</div>
+</div>

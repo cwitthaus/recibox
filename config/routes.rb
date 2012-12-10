@@ -17,6 +17,8 @@ SampleApp::Application.routes.draw do
 
   match '/newrecipe',     to: 'recipes#new'
 
+  match '/newingredient', to: 'ingredients#new'
+
   match '/colorscheme',   to: 'static_pages#color_scheme'
 
   # The priority is based upon order of creation:

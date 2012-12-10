@@ -9,7 +9,7 @@
 #
 
 class Step < ActiveRecord::Base
-  attr_accessible :instructions, :number
+  attr_accessible :instructions, :number, :recipe_id
   validates :instructions, presence: true
   validates :number, presence: true
   validates :recipe_id, presence: true
