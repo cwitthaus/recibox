@@ -1,0 +1,22 @@
+[I][T]
+Recipe
+[X][ ] title (string)
+[X][ ] source (string)
+[X][ ] uploaded_user (integer)
+[X][ ] has_many ingredient_list_items
+[X][ ] has_many steps
+
+Ingredients
+[X][ ] name (string) 
+[X][ ] replacement (string)
+
+IngredientListItem
+[X][ ] belongs_to recipe
+[X][ ] belongs_to ingredient
+[x][X] measurement_amount (float)
+[x][X] measurement_unit (string)
+
+Steps
+[X][ ] number (integer)
+[X][ ] text (string)
+[X][ ] belongs_to recipe
