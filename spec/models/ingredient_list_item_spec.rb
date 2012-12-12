@@ -7,6 +7,7 @@
 #  measurement_amount :float
 #  measurement_unit   :string(255)
 #  ingredient_id      :integer
+#  details            :string(255)
 #
 
 require 'spec_helper'

@@ -9,7 +9,7 @@
 		<%= f.text_field :measurement_unit %>
 
 		<span>Ingredient</span>
-		<%= text_field_tag :ingredient_name %>
+		<%= f.autocomplete_field :ingredient_name, autocomplete_ingredient_name_recipes_path %>
 
 		<%= f.label :details, "Details" %>
 		<%= f.text_field :details %>

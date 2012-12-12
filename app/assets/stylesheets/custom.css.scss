@@ -251,13 +251,30 @@ ul.recipes {
     text-align: center;
   }
   .ingredients {
+    padding: 10px;
     background-color: $secondaryA-light;
-
-    @extend .span2;
+    border-radius: 10px;
+    border: 2px solid $secondaryA-dark;
+    float: left;
+    @extend .span3;
     @extend .offset1;
+    li {
+      list-style-type:  none;
+      background-color: $secondaryA;
+      border-radius: 5px;
+      border: 1px solid $secondaryA-dark;
+      @include clearfix;
+    }
   }
   .steps {
-
+    padding: 10px;
+    background-color: $secondaryB-light;
+    border-radius: 10px;
+    border: 2px solid $secondaryB-dark;
+    float: left;
+    float: left;
+    @extend .span5;
+    @extend .offset1;
   }
 }
 
