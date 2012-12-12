@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+ingredients = File.foreach('doc/ingredients') { |line|
+	Ingredient.create(name: line)
+}
