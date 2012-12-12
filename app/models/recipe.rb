@@ -12,18 +12,15 @@
 
 class Recipe < ActiveRecord::Base
   attr_accessible :source, :title, :uploaded_user,
-  	 :steps_attributes, :ingredient_list_items_attributes
+       :steps_attributes, :ingredient_list_items_attributes
   validates :title, presence: true
   validates :uploaded_user, presence: true
 
-  has_many :steps, dependent: :destroy
-  has_many :ingredient_list_items, dependent: :destroy
+  has_many :steps
+  has_many :ingredient_list_items
+  has_many :ingredients, :through => :ingredient_list_items
 
-  accepts_nested_attributes_for :steps, 
-  		:reject_if => lambda { |a| a[:instructions].blank? },
-  		:allow_destroy => true
-
-  accepts_nested_attributes_for :ingredient_list_items, 
-  		:reject_if => lambda { |a| a[:measurement_amount].blank? },
-  		:allow_destroy => true
+  accepts_nested_attributes_for :steps
+  accepts_nested_attributes_for :ingredient_list_items
+  accepts_nested_attributes_for :ingredients
 end
