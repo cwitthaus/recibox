@@ -1,11 +1,13 @@
 <li "ingredient_list_item">
-	<div class="amount">
-		<%= ingredient_list_item.measurement_amount %>
-	</div>
-	<div class="unit">
-		<%= ingredient_list_item.measurement_unit %>
-	</div>
-	<div class="name">
-		name
+	<div class="row-fluid">
+		<div class="amount">
+			<%= ingredient_list_item.measurement_amount %>
+		</div>
+		<div class="unit">
+			<%= ingredient_list_item.measurement_unit %>
+		</div>
+		<div class="name">
+			<%= ingredient_list_item.ingredient.name %>
+		</div>
 	</div>
 </li>

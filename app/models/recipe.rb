@@ -22,5 +22,4 @@ class Recipe < ActiveRecord::Base
 
   accepts_nested_attributes_for :steps
   accepts_nested_attributes_for :ingredient_list_items
-  accepts_nested_attributes_for :ingredients
 end
