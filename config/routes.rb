@@ -1,9 +1,7 @@
 SampleApp::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :recipes do
-    get :autocomplete_ingredient_name, :on => :collection
-  end
+  resources :recipes
   resources :ingredients
 
   root to:'static_pages#home'

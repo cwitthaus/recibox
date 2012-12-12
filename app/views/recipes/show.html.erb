@@ -1,29 +1,27 @@
 <% provide(:title, @recipe.title) %>
-<div class="row">
-	<div class="span12 recipe">
+<div class="row-fluid">
+	<div class="recipe">
 		<h1>
 			<%= @recipe.title %>
 		</h1>
 		<h3>
 			<%= @recipe.source %>
 		</h3>
-		<div class="row-fluid">
-			<% if @ingredients %>
-			<div class="ingredients">
-				<h5>Ingredients:</h5>
-				<ol>
-					<%= render @ingredients %>
-				</ol>
-			</div>
-			<% end %>
-			<% if @steps %>
-			<div class="steps">
-				<h5>Steps:</h5>
-				<ol>
-					<%= render @steps %>
-				</ol>
-			</div>	
-			<% end %>
+		<% if @ingredients %>
+		<div class="ingredients">
+			<h5>Ingredients:</h5>
+			<ol>
+				<%= render @ingredients %>
+			</ol>
 		</div>
-  </div>
+		<% end %>
+		<% if @steps %>
+		<div class="steps">
+			<h5>Steps:</h5>
+			<ol>
+				<%= render @steps %>
+			</ol>
+		</div>	
+		<% end %>
+	</div>
 </div>

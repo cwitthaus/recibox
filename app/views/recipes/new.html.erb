@@ -12,22 +12,16 @@
       <%= f.text_field :source %>
       <h3>Steps</h3>
       <div class="steps">
-        <ol>
-          <%= f.fields_for :steps do |builder| %>
-            <%= render 'step', f: builder %>
-          <% end %>
-        </ol>
-
+        <%= f.fields_for :steps do |builder| %>
+          <%= render 'step', f: builder %>
+        <% end %>
         <%= button_to_add_fields "Add Step", f, :steps %>
       </div>
       <h3>Ingredients</h3>
       <div class="ingredients">
-        <ol>
-          <%= f.fields_for :ingredient_list_items do |builder| %>
-            <%= render 'ingredient_list_item', f: builder %>
-          <% end %>
-        </ol>
-
+        <%= f.fields_for :ingredient_list_items do |builder| %>
+          <%= render 'ingredient_list_item', f: builder %>
+        <% end %>
         <%= button_to_add_fields "Add ingredient", f, :ingredient_list_items %>
       </div>
 

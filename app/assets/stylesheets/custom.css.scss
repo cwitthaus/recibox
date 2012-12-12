@@ -210,6 +210,7 @@ input {
 ul.recipes {
   border: 2px solid $secondaryB-dark;
   border-radius: 10px;
+  margin: 0px;
   a {
     display: block;
     text-decoration: none;
@@ -246,35 +247,33 @@ ul.recipes {
     @include clearfix;
   }
 }
+
 .recipe {
-  h3 { 
-    text-align: center;
+  @extend .span12;
+  h3 {
+    @extend .center;
   }
   .ingredients {
-    padding: 10px;
-    background-color: $secondaryA-light;
-    border-radius: 10px;
-    border: 2px solid $secondaryA-dark;
-    float: left;
-    @extend .span3;
-    @extend .offset1;
+    @extend .span8;
+    @extend .offset2;
+    @include box_sizing;
+
+    text-decoration: none;
     li {
-      list-style-type:  none;
-      background-color: $secondaryA;
-      border-radius: 5px;
-      border: 1px solid $secondaryA-dark;
+      list-style-type: none;
+      div {
+        float: left;
+        margin-right: 5px;
+      }
       @include clearfix;
     }
   }
   .steps {
-    padding: 10px;
-    background-color: $secondaryB-light;
-    border-radius: 10px;
-    border: 2px solid $secondaryB-dark;
-    float: left;
-    float: left;
-    @extend .span5;
+    @extend .span10;
     @extend .offset1;
+    li {
+      list-style-type:  none;
+    }
   }
 }
 

@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-	autocomplete :ingredient, :name
 	before_filter :signed_in_user, only: [:new, :create, :destroy]
 
 	def index
