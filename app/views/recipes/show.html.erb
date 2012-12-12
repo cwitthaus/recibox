@@ -7,21 +7,23 @@
 		<h3>
 			<%= @recipe.source %>
 		</h3>
-		<% if @ingredients %>
-		<div class="ingredients">
-			Ingredients:
-			<ol>
-				<%= render @ingredients %>
-			</ol>
+		<div class="row-fluid">
+			<% if @ingredients %>
+			<div class="ingredients">
+				<h5>Ingredients:</h5>
+				<ol>
+					<%= render @ingredients %>
+				</ol>
+			</div>
+			<% end %>
+			<% if @steps %>
+			<div class="steps">
+				<h5>Steps:</h5>
+				<ol>
+					<%= render @steps %>
+				</ol>
+			</div>	
+			<% end %>
 		</div>
-		<% end %>
-		<% if @steps %>
-		<div class="steps">
-			Steps:
-			<ol>
-				<%= render @steps %>
-			</ol>
-		</div>	
-		<% end %>
   </div>
 </div>

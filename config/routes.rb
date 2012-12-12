@@ -1,7 +1,9 @@
 SampleApp::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :recipes
+  resources :recipes do
+    get :autocomplete_ingredient_name, :on => :collection
+  end
   resources :ingredients
 
   root to:'static_pages#home'
@@ -20,6 +22,7 @@ SampleApp::Application.routes.draw do
   match '/newingredient', to: 'ingredients#new'
 
   match '/colorscheme',   to: 'static_pages#color_scheme'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
