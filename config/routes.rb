@@ -4,7 +4,7 @@ SampleApp::Application.routes.draw do
   resources :recipes
   resources :ingredients
 
-  root to:'static_pages#home'
+  root to:'recipes#index'
 
   match '/signup',        to: 'users#new'
   match '/signin',        to: 'sessions#new'
@@ -16,6 +16,7 @@ SampleApp::Application.routes.draw do
   match '/contact',       to: 'static_pages#contact'
 
   match '/newrecipe',     to: 'recipes#new'
+  match '/myrecipes',     to: 'recipes#show_users_recipes'
 
   match '/newingredient', to: 'ingredients#new'
 

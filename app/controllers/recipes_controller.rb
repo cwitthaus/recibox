@@ -28,4 +28,9 @@ class RecipesController < ApplicationController
 		logger.debug "#{@ingredients}"
 		@steps = @recipe.steps
 	end
+
+	def show_users_recipes
+		@recipes = Recipe.find_all_by_uploaded_user(current_user)
+		render 'my_recipes'
+	end
 end
