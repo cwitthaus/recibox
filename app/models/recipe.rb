@@ -20,6 +20,6 @@ class Recipe < ActiveRecord::Base
   has_many :ingredient_list_items
   has_many :ingredients, :through => :ingredient_list_items
 
-  accepts_nested_attributes_for :steps
-  accepts_nested_attributes_for :ingredient_list_items
+  accepts_nested_attributes_for :steps, :allow_destroy => true
+  accepts_nested_attributes_for :ingredient_list_items, :allow_destroy => true
 end
