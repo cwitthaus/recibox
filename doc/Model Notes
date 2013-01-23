@@ -8,3 +8,10 @@ Ingredients
 - name of ingredient
 - measurment
 - replacements (usually null)
+
+Blog
+- author
+- date
+- content
+- recipe?
+- tags?

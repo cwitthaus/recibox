@@ -1,0 +1,30 @@
+<div class="row">
+	<div id="recipe_input" class="span5">
+		<%= text_area_tag 'recipe_text', nil, :size => '80x30' %>
+		<%= button_to_begin_building_recipe %>
+		<p stlye="width:80">
+		</p>
+	</div>
+
+	<div id="recipe_values" class="span6">
+		<%= toolbar_for_parsing_recipe(@recipe) %>
+		<%= form_for @recipe do |f| %>
+	   	<%= f.label :title %>
+	    <%= f.text_field :title %>
+
+	    <%= f.label :source %>
+	    <%= f.text_field :source %>
+			<div class="ingredients">
+	      <%= f.fields_for :ingredient_list_items do |builder| %>
+	      	<%= render 'ingredient_list_item', f: builder %>
+	      <% end %>
+	    </div>
+	    <div class="steps">
+	      <%= f.fields_for :steps do |builder| %>
+	        <%= render 'step', f: builder %>
+	      <% end %>
+	    </div>
+	    <%= f.submit "Add Recipe", class: "btn btn-large btn-primary right" %>
+		<% end %>
+	</div>
+</div>

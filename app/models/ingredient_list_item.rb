@@ -16,8 +16,10 @@ class IngredientListItem < ActiveRecord::Base
   attr_accessor :ingredient_name
   belongs_to :recipe, dependent: :destroy
   belongs_to :ingredient, dependent: :destroy
+  
   validates :measurement_amount, presence: true
-  validates :ingredient_id, presence: true
+  validates :ingredient_name, presence: true
+
   # at first, I thought maybe we wanted to force measurement_unit to be present
   #   as well, but what about eggs or apples, or chicken breasts, etc...
 

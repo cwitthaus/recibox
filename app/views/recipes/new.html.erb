@@ -1,28 +1,32 @@
 <% provide(:title, 'Add Recipe') %>
 <h1>Add Recipe</h1>
 <div class="row">
-  <div class="span6 offset3">
-    <%= form_for @recipe do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+  <div id="recipe_input" class="span5">
+    <pre id="recipe_text" style="display:none">
+    </pre>
+    <%= text_area_tag 'recipe_text',nil, :rows => 20  %>
+    <%= button_to_begin_building_recipe %>
+  </div>
 
+  <div id="recipe_values" class="span6">
+    <%= form_for @recipe do |f| %>
+      <%= toolbar_for_parsing_recipe(f) %>
       <%= f.label :title %>
       <%= f.text_field :title %>
 
       <%= f.label :source %>
       <%= f.text_field :source %>
-      <h3>Ingredients</h3>
-      <div class="ingredients">
+      <div class="ingredients span5">
+        <h2>Ingredients</h2>
         <%= f.fields_for :ingredient_list_items do |builder| %>
           <%= render 'ingredient_list_item', f: builder %>
         <% end %>
-        <%= button_to_add_fields "Add ingredient", f, :ingredient_list_items %>
       </div>
-      <h3>Steps</h3>
-      <div class="steps">
+      <div class="steps span5">
+        <h2>Steps</h2>
         <%= f.fields_for :steps do |builder| %>
           <%= render 'step', f: builder %>
         <% end %>
-        <%= button_to_add_fields "Add Step", f, :steps %>
       </div>
       <%= f.submit "Add Recipe", class: "btn btn-large btn-primary right" %>
     <% end %>

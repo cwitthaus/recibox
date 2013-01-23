@@ -14,6 +14,8 @@ SampleApp::Application.routes.draw do
   match '/contact',       to: 'static_pages#contact'
 
   match '/newrecipe',     to: 'recipes#new'
+  match '/parse_ingredient', to: 'recipes#get_parsed_ingredient_list', via: :post
+  match '/new_recipe_from_text', to: 'recipes#new_from_copy_paste'
   match '/myrecipes',     to: 'recipes#show_users_recipes'
 
   match '/newingredient', to: 'ingredients#new'
